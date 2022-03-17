@@ -1,0 +1,9 @@
+sudo: required #need super user permission
+services:
+  - docker
+
+before_install:
+  - docker build -t kridsada/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run kridsada/docker-react npm run test -- --coverage
