@@ -12,6 +12,7 @@ RUN npm run build
 # first block already success
 
 FROM nginx
+EXPOSE 80
 
 # copy build folder into nginx html path
 COPY --from=builder /app/build /usr/share/nginx/html
